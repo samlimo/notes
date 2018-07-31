@@ -186,7 +186,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         
         do{
             let request = Notes.fetch()
-            request.predicate = NSPredicate(format: "title contains[cd] %@ OR details contains[cd] %@", textFilter)
+            request.predicate = NSPredicate(format: "title contains[cd] %@", textFilter)
             let notes = try managedContext.fetch(request)
             return notes
         } catch let error as NSError {
